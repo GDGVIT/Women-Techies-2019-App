@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:actionLayout="@layout/menu_background_layout"
+            android:id="@+id/nav_agenda"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Agenda"
+            />
+        <item
+            android:id="@+id/nav_scratch_card"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Scratch Card" />
+        <item
+            android:id="@+id/nav_quiz"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Quiz" />
+        <item
+            android:id="@+id/nav_questions"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Questions" />
+
+
+        <item
+            android:id="@+id/nav_sponsors"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Sponsors" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_send"
+            android:title="About" />
+        <item
+            android:id="@+id/nav_sign_in"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Sign In" />
+
+    </group>
+
+</menu>
