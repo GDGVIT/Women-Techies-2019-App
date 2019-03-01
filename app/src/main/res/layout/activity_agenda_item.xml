@@ -30,10 +30,10 @@
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_marginLeft="20dp"
-                    app:srcCompat="@drawable/dsc_logo"
+                    app:srcCompat="@drawable/ic_info_black_24dp"
                     android:tag="image_tag" />
 
 
@@ -42,8 +42,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="2dp"
                     android:text="Event Name"
                     android:textColor="@color/colorWhite"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -54,7 +53,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="-15dp"
                 android:text="Event Timing"
                 android:textStyle="bold"
                 android:textColor="@color/colorWhite"

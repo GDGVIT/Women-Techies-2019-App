@@ -34,6 +34,7 @@
         app:layout_constraintHorizontal_bias="0.873"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.919" />
+        app:layout_constraintVertical_bias="0.919"
+        android:backgroundTint="@color/colorGradientBlue"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

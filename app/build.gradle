@@ -41,5 +41,6 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.2.0'
     implementation 'com.github.cooltechworks:ScratchView:v1.1'
     implementation 'saschpe.android:customtabs:2.0.0'
+    implementation 'com.shobhitpuri.custombuttons:google-signin:1.0.0'
 }
 apply plugin: 'com.google.gms.google-services'

@@ -7,34 +7,34 @@
         <item
             android:actionLayout="@layout/menu_background_layout"
             android:id="@+id/nav_agenda"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/agenda"
             android:title="Agenda"
             />
         <item
             android:id="@+id/nav_scratch_card"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/scratch_card"
             android:title="Scratch Card" />
         <item
             android:id="@+id/nav_quiz"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_incandescent_light_bulb"
             android:title="Quiz" />
         <item
             android:id="@+id/nav_questions"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_question"
             android:title="Questions" />
 
 
         <item
             android:id="@+id/nav_sponsors"
-            android:icon="@drawable/ic_menu_share"
+            android:icon="@drawable/ic_userss"
             android:title="Sponsors" />
         <item
             android:id="@+id/nav_about"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@drawable/ic_info"
             android:title="About" />
         <item
             android:id="@+id/nav_sign_in"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@drawable/ic_user"
             android:title="Sign In" />
 
     </group>

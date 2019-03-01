@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/about_btn_background"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="@drawable/gradient_box_tilt">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/placeHolderView"
@@ -22,10 +22,10 @@
 
             <ImageView
                 android:layout_width="220dp"
-                android:layout_height="220dp"
+                android:layout_height="260dp"
                 android:layout_gravity="center"
                 android:layout_margin="16dp"
-                app:srcCompat="@drawable/gradient_box" />
+                app:srcCompat="@drawable/ic_gift" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -45,7 +45,7 @@
     </androidx.cardview.widget.CardView>
 
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/scratchCardParentView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -89,10 +89,10 @@
                 android:textSize="24sp" />
         </LinearLayout>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/afterRevealCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -110,8 +110,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="16dp"
-                android:text="You Unique Key is .."
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="30dp"
+                android:text="Your unique key is ..."
                 android:textSize="24sp" />
 
             <FrameLayout
@@ -123,21 +125,19 @@
                     android:layout_height="160dp"
                     android:layout_gravity="center"
                     android:layout_marginEnd="24dp"
-                    android:layout_marginStart="24dp"
-                    />
+                    android:layout_marginStart="24dp" />
 
                 <TextView
                     android:id="@+id/keyTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="24dp"
                     android:fontFamily="sans-serif-light"
                     android:gravity="center_horizontal"
                     android:textSize="28sp" />
             </FrameLayout>
 
         </LinearLayout>
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>

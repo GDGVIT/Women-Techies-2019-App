@@ -32,7 +32,7 @@ public class ScratchFragment extends Fragment {
     private ScratchTextView scratchView;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference keyRef = database.getReference("keys");
-    private DatabaseReference enabledRef = database.getReference("scratchEnabled");
+    private DatabaseReference enabledRef = database.getReference("quiz").child("scratchEnabled");
 
     public ScratchFragment() {
         // Required empty public constructor

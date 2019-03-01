@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.colorGradientBlue));
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -60,16 +61,12 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_agenda) {
             selectedScreen = AgendaFragment.newInstance();
-//            Intent intentToAgenda = new Intent(MainActivity.this, AgendaActivity.class);
-//            startActivity(intentToAgenda);
             showFragment(selectedScreen);
             toolbar.setTitle("Agenda");
         }
         else if (id == R.id.nav_about) {
             Intent intentToAbout = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intentToAbout);
-//            selectedScreen = AboutActivity.newInstance();
-//            showFragment(selectedScreen);
             toolbar.setTitle("About");
         }
         else if (id == R.id.nav_sponsors) {
@@ -98,26 +95,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(this,QuizIntroActivity.class));
             toolbar.setTitle("Quiz");
         }
-
-//        }
-            // Handle the camera action
-//        } else if (id == R.id.nav_gallery) {
-//
-
-//        } else if (id == R.id.nav_slideshow) {
-//
-//        } else if (id == R.id.nav_manage) {
-//
-//        } else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
-//        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-
-       // showFragment(selectedScreen);
     }
 
     private void showFragment(Fragment fragment) {
