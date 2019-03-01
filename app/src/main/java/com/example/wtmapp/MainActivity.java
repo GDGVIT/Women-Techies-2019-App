@@ -82,9 +82,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_agenda) {
-            Intent intentToAgenda = new Intent(MainActivity.this,AgendaActivity.class);
+            Intent intentToAgenda = new Intent(MainActivity.this, AgendaActivity.class);
             startActivity(intentToAgenda);
-        }
+//        }
             // Handle the camera action
 //        } else if (id == R.id.nav_gallery) {
 //
@@ -97,6 +97,9 @@ public class MainActivity extends AppCompatActivity
 //        } else if (id == R.id.nav_send) {
 //
 //        }
+        }else if(id==R.id.nav_quiz){
+            startActivity(new Intent(this,QuizIntroActivity.class));
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

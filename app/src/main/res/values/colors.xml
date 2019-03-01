@@ -25,4 +25,7 @@
 
     <color name="colorGradientGreen">#17d4b4</color>
     <color name="colorGradientBlue">#408af2</color>
+    <color name="colorQuizButton">#3e8def</color>
+
+
 </resources>
