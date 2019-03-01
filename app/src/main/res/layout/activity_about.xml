@@ -39,6 +39,7 @@
         android:background="@drawable/about_btn_background"/>
 
     <FrameLayout
+
         android:id="@+id/frame_layout_about_dsc"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
