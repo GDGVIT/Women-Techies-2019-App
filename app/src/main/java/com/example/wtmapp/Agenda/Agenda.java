@@ -1,4 +1,4 @@
-package com.example.wtmapp;
+package com.example.wtmapp.Agenda;
 
 public class Agenda  {
 
