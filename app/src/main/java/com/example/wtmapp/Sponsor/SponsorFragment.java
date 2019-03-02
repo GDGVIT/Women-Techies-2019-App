@@ -80,13 +80,13 @@ public class SponsorFragment extends Fragment implements DiscreteScrollView.OnIt
         rootView = inflater.inflate(R.layout.fragment_sponsors, container, false);
 
         sponsorData = Arrays.asList(
-                new Sponsor("WTM", "Sponsor", "https://www.womentechmakers.com/india",R.drawable.dsc_logo),
-                new Sponsor("LBRY", "Sponsor", "https://lbry.io/", R.drawable.dsc_logo),
-                new Sponsor("Turbot", "Sponsor", "https://turbot.com/", R.drawable.dsc_logo),
-                new Sponsor("UpCloud", "Sponsor", "https://upcloud.com/", R.drawable.ic_upcloud_logo),
-                new Sponsor("Hackerearth", "Sponsor", "https://www.hackerearth.com/", R.drawable.ic_hackerearth_logo),
+                new Sponsor("WTM", "Sponsor", "https://www.womentechmakers.com/india",R.drawable.wtm_logo),
+                new Sponsor("LBRY", "Sponsor", "https://lbry.io/", R.drawable.lbry),
+                new Sponsor("Turbot", "Sponsor", "https://turbot.com/", R.drawable.turbot),
+                new Sponsor("UpCloud", "Sponsor", "https://upcloud.com/", R.drawable.upcloud),
+                new Sponsor("Hackerearth", "Sponsor", "https://www.hackerearth.com/", R.drawable.hacker),
                 new Sponsor("C9 Bistro", "Sponsor", "https://www.facebook.com/c9bistro/", R.drawable.c9bistro),
-                new Sponsor("MSG91", "Sponsor", "https://msg91.com/", R.drawable.ic_msg_logo));
+                new Sponsor("MSG91", "Sponsor", "https://msg91.com/", R.drawable.msg));
 
         currentSponsorName = (TextView) rootView.findViewById(R.id.sponsor_name);
         currentSponsorType = (TextView) rootView.findViewById(R.id.sponsor_type);
