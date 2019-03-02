@@ -12,6 +12,7 @@ import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -40,8 +41,6 @@ public class SignInFragment extends Fragment {
     private final static int RC_SIGN_IN = 1;
     GoogleApiClient mGoogleApiClient;
     FirebaseAuth mAuth;
-    private FirebaseDatabase mFirebaseDatabase;
-    private DatabaseReference mMessagesDatabaseReference;
     FirebaseAuth.AuthStateListener mAuthListener;
     private static final String TAG = "Main Activity";
     private View rootView;
@@ -65,52 +64,14 @@ public class SignInFragment extends Fragment {
                 signIn();
             }
         });
-        mAuth = FirebaseAuth.getInstance();
 
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mMessagesDatabaseReference = mFirebaseDatabase.getReference();
+        mAuth = FirebaseAuth.getInstance();
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(final @NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null) {
-
-                    mMessagesDatabaseReference.child("users").addListenerForSingleValueEvent(
-                            new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
-                                    for (final DataSnapshot data : dataSnapshot.getChildren()) {
-                                        if ((firebaseAuth.getCurrentUser().getDisplayName()).equals(data.child("user_name").getValue())) {
-                                           // Toast.makeText(getActivity(), "Already logged in ", Toast.LENGTH_SHORT).show();
-                                        } else {
-                                            String key = firebaseAuth.getCurrentUser().getUid();
-
-                                            final Users u = new Users();
-                                            u.setUserName(firebaseAuth.getCurrentUser().getDisplayName());
-                                            u.setUserEmail(firebaseAuth.getCurrentUser().getEmail());
-                                            u.setUserPhotoUrl(firebaseAuth.getCurrentUser().getPhotoUrl().toString());
-
-                                            Map<String, Object> childUpdates = new HashMap<>();
-                                            childUpdates.put(key, u.toUsersFirebaseObject());
-                                            mMessagesDatabaseReference.child("users").updateChildren(childUpdates, new DatabaseReference.CompletionListener() {
-                                                @Override
-                                                public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
-                                                    if (databaseError == null) {
-                                                        Toast.makeText(getActivity(), "Authentication successful ", Toast.LENGTH_SHORT).show();
-                                                    }
-                                                }
-                                            });
-                                        }
-                                    }
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                }
-                            }
-                    );
-                }
+                    }
             }
         };
 
@@ -120,6 +81,12 @@ public class SignInFragment extends Fragment {
                 .build();
 
         mGoogleApiClient = new GoogleApiClient.Builder(getActivity())
+                .enableAutoManage(getActivity(), new GoogleApiClient.OnConnectionFailedListener() {
+                    @Override
+                    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+                        Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
+                    }
+                })
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
@@ -141,6 +108,7 @@ public class SignInFragment extends Fragment {
             if (result.isSuccess()) {
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
+                Toast.makeText(getActivity(), "Logged in successfully!!" , Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(getActivity(), "Authentication went wrong ", Toast.LENGTH_SHORT).show();
             }
@@ -170,13 +138,9 @@ public class SignInFragment extends Fragment {
     public void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
-        mGoogleApiClient.connect();
+
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        mGoogleApiClient.disconnect();
-    }
+
 }
 

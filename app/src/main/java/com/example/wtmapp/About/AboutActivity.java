@@ -72,9 +72,9 @@ public class AboutActivity extends AppCompatActivity {
         ImageButton btnToDSC;
         ImageButton btnToWTM;
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar_other);
-        toolbar.setTitle("About DSC");
-        setSupportActionBar(toolbar);
+//        toolbar = (Toolbar) findViewById(R.id.toolbar_other);
+//        toolbar.setTitle("About DSC");
+//        setSupportActionBar(toolbar);
 
 
         btnToDSC = findViewById(R.id.btn_dsc);

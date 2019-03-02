@@ -71,7 +71,7 @@
         android:text="Which of these leaders has never been a Union Minister of India ?"
         />
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/option1"
         android:layout_below="@id/question"
         android:layout_centerHorizontal="true"
@@ -92,9 +92,9 @@
             android:layout_height="wrap_content"
             android:text="Option 1"/>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/option2"
         android:layout_marginTop="12dp"
         android:layout_below="@id/option1"
@@ -115,9 +115,9 @@
             android:layout_height="wrap_content"
             android:text="Option 2"/>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/option3"
         android:layout_marginTop="12dp"
         android:layout_below="@id/option2"
@@ -138,9 +138,9 @@
             android:layout_height="wrap_content"
             android:text="Option 3"/>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/option4"
         android:layout_below="@id/option3"
         android:layout_centerHorizontal="true"
@@ -161,9 +161,9 @@
             android:layout_height="wrap_content"
             android:text="Option 4"/>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/finish_quiz"
         android:visibility="gone"
         android:layout_centerHorizontal="true"
@@ -187,7 +187,7 @@
             android:layout_height="wrap_content"
             android:text=" Finish Quiz"/>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 
 </RelativeLayout>

@@ -1,8 +1,10 @@
 package com.example.wtmapp.About;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.wtmapp.R;
 
@@ -80,18 +82,30 @@ public class AboutDSCFragment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_dsc);
 
+//        toolbar = (androidx.appcompat.widget.Toolbar) findViewById(R.id.toolbar_other);
+//        toolbar.setTitle("About DSC");
+//        setSupportActionBar(toolbar);
 
-        toolbar = (androidx.appcompat.widget.Toolbar) findViewById(R.id.toolbar_other);
-        toolbar.setTitle("About DSC");
-        setSupportActionBar(toolbar);
+        showFragment(AboutDscFaq.newInstance());
 
-        Button btnToDSCFAQ = findViewById(R.id.btn_dsc_faq);
-        Button btnToDSCAbout = findViewById(R.id.btn_dsc_about);
+
+        final TextView btnToDSCFAQ = findViewById(R.id.btn_dsc_faq);
+        final TextView btnToDSCAbout = findViewById(R.id.btn_dsc_about);
+
+        btnToDSCAbout.setTextColor(Color.WHITE);
+        btnToDSCAbout.setBackgroundResource(R.drawable.quiz_gradient);
 
 
         btnToDSCFAQ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                btnToDSCFAQ.setTextColor(Color.WHITE);
+                btnToDSCFAQ.setBackgroundResource(R.drawable.quiz_gradient);
+
+                btnToDSCAbout.setTextColor(Color.BLACK);
+                btnToDSCAbout.setBackgroundColor(Color.WHITE);
+
                 selectedScreen = AboutDscFaq.newInstance();
                 showFragment(selectedScreen);
 
@@ -101,6 +115,13 @@ public class AboutDSCFragment extends AppCompatActivity {
         btnToDSCAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                btnToDSCAbout.setTextColor(Color.WHITE);
+                btnToDSCAbout.setBackgroundResource(R.drawable.quiz_gradient);
+
+                btnToDSCFAQ.setTextColor(Color.BLACK);
+                btnToDSCFAQ.setBackgroundColor(Color.WHITE);
+
                 selectedScreen = AboutDscAbout.newInstance();
                 showFragment(selectedScreen);
 

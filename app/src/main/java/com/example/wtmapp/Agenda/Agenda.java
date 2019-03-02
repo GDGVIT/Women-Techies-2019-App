@@ -3,13 +3,13 @@ package com.example.wtmapp.Agenda;
 public class Agenda  {
 
     String name;
-    String version;
+    String description;
     int id_;
     int image;
 
     public Agenda(String name, String version, int id_, int image) {
         this.name = name;
-        this.version = version;
+        this.description = version;
         this.id_ = id_;
         this.image=image;
     }
@@ -19,7 +19,7 @@ public class Agenda  {
     }
 
     public String getVersion() {
-        return version;
+        return description;
     }
 
     public int getImage() {
