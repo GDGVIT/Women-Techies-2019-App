@@ -52,7 +52,7 @@ public class ScratchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        rootView = inflater.inflate(R.layout.activity_scratch, container, false);
+        rootView = inflater.inflate(R.layout.fragment_scratch, container, false);
 
         placeholderCardView = (CardView) rootView.findViewById(R.id.placeHolderView);
         scratchCardParentView = (CardView) rootView.findViewById(R.id.scratchCardParentView);

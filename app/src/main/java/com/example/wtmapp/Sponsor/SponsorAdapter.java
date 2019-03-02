@@ -23,7 +23,7 @@ public class SponsorAdapter  extends RecyclerView.Adapter<SponsorAdapter.ViewHol
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View v = inflater.inflate(R.layout.sponsor_item, parent, false);
+        View v = inflater.inflate(R.layout.fragment_sponsor_item, parent, false);
         return new ViewHolder(v);
     }
 

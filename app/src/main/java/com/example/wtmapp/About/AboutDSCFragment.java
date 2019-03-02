@@ -3,7 +3,6 @@ package com.example.wtmapp.About;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.wtmapp.R;
@@ -30,7 +29,7 @@ public class AboutDSCFragment extends AppCompatActivity {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.activity_about_dsc, container, false);
+        rootView = inflater.inflate(R.layout.fragment_about_dsc, container, false);
 
         Button btnToDSCFAQ = rootView.findViewById(R.id.btn_dsc_faq);
         Button btnToDSCAbout = rootView.findViewById(R.id.btn_dsc_about);
@@ -80,7 +79,7 @@ public class AboutDSCFragment extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_dsc);
+        setContentView(R.layout.fragment_about_dsc);
 
 //        toolbar = (androidx.appcompat.widget.Toolbar) findViewById(R.id.toolbar_other);
 //        toolbar.setTitle("About DSC");

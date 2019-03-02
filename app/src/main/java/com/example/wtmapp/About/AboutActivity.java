@@ -27,7 +27,7 @@ public class AboutActivity extends AppCompatActivity {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
-        rootView = inflater.inflate(R.layout.activity_about, container, false);
+        rootView = inflater.inflate(R.layout.fragment_about, container, false);
 
 
         ImageButton btnToDSC;
@@ -67,7 +67,7 @@ public class AboutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+        setContentView(R.layout.fragment_about);
 
         ImageButton btnToDSC;
         ImageButton btnToWTM;

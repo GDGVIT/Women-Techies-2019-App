@@ -77,16 +77,16 @@ public class SponsorFragment extends Fragment implements DiscreteScrollView.OnIt
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        rootView = inflater.inflate(R.layout.activity_sponsors, container, false);
+        rootView = inflater.inflate(R.layout.fragment_sponsors, container, false);
 
         sponsorData = Arrays.asList(
-                new Sponsor("WTM", "Sponsor", "https://www.womentechmakers.com/india", R.drawable.dsc_logo),
+                new Sponsor("WTM", "Sponsor", "https://www.womentechmakers.com/india",R.drawable.dsc_logo),
                 new Sponsor("LBRY", "Sponsor", "https://lbry.io/", R.drawable.dsc_logo),
                 new Sponsor("Turbot", "Sponsor", "https://turbot.com/", R.drawable.dsc_logo),
-                new Sponsor("UpCloud", "Sponsor", "https://upcloud.com/", R.drawable.dsc_logo),
-                new Sponsor("Hackerearth", "Sponsor", "https://www.hackerearth.com/", R.drawable.dsc_logo),
-                new Sponsor("C9 Bistro", "Sponsor", "https://www.facebook.com/c9bistro/", R.drawable.dsc_logo),
-                new Sponsor("MSG91", "Sponsor", "https://msg91.com/", R.drawable.dsc_logo));
+                new Sponsor("UpCloud", "Sponsor", "https://upcloud.com/", R.drawable.ic_upcloud_logo),
+                new Sponsor("Hackerearth", "Sponsor", "https://www.hackerearth.com/", R.drawable.ic_hackerearth_logo),
+                new Sponsor("C9 Bistro", "Sponsor", "https://www.facebook.com/c9bistro/", R.drawable.c9bistro),
+                new Sponsor("MSG91", "Sponsor", "https://msg91.com/", R.drawable.ic_msg_logo));
 
         currentSponsorName = (TextView) rootView.findViewById(R.id.sponsor_name);
         currentSponsorType = (TextView) rootView.findViewById(R.id.sponsor_type);
@@ -171,7 +171,7 @@ public class SponsorFragment extends Fragment implements DiscreteScrollView.OnIt
         @Override
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
             // Inflate the layout for this fragment
-            rootView = inflater.inflate(R.layout.activity_sponsors, container, false);
+            rootView = inflater.inflate(R.layout.fragment_sponsors, container, false);
 
             sponsorData = Arrays.asList(
                     new Sponsor("TECHGIG", "Platform Sponsor", "https://www.techgig.com/", R.drawable.dsc_logo),

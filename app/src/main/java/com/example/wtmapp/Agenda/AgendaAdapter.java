@@ -37,7 +37,7 @@ public class AgendaAdapter extends RecyclerView.Adapter<AgendaAdapter.MyViewHold
     public MyViewHolder onCreateViewHolder(ViewGroup parent,
                                            int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_agenda_item
+                .inflate(R.layout.fragment_agenda_item
                         , parent, false);
 
 //        view.setOnClickListener(MainActivity.myOnClickListener);
