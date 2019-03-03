@@ -1,31 +1,49 @@
-package com.example.wtmapp;
+package com.example.wtmapp.Quiz;
 
+import android.content.Intent;
 import android.graphics.Color;
-import android.os.CountDownTimer;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.wtmapp.MainActivity;
+import com.example.wtmapp.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 public class QuizActivity extends AppCompatActivity {
 
-    CardView option1, option2, option3, option4,finishQuiz;
+    CardView option1, option2, option3, option4, finishQuiz;
     TextView option1text, option2text, option3text, option4text;
-    TextView timeTextView, questionTextView,ScoreTextView;
+    TextView timeTextView, questionTextView, ScoreTextView;
     int index = 0;
     int answerCorrected = 0;
     CountDownTimer countDownTimer;
     public static final int TOTAL_QUESTIONS = 10;
-    String[] allQuestions = {"Question1", "Question2", "Question3", "Question4", "Question5", "Question6",
-            "Question7", "Question8", "Question9", "Question10"};
+
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+    private DatabaseReference enabledRef = database.getReference("quiz").child("quizList");
+    private DatabaseReference refToUser = database.getReference("users");
+    String user;
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_quiz);
+        setContentView(R.layout.activity_quiz);
         option1 = findViewById(R.id.option1);
         option2 = findViewById(R.id.option2);
         option3 = findViewById(R.id.option3);
@@ -38,12 +56,54 @@ public class QuizActivity extends AppCompatActivity {
         questionTextView = findViewById(R.id.question);
         finishQuiz = findViewById(R.id.finish_quiz);
         ScoreTextView = findViewById(R.id.score_tv);
-        checkCorrectAnswer(allQuestions[index++], "", "", "", "", 1);
+
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser().getDisplayName();
+
+        enabledRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Log.d("Hello", dataSnapshot.toString());
+
+                int answer = Integer.parseInt(dataSnapshot.child(String.valueOf(index)).child("answer").getValue().toString());
+                String question = dataSnapshot.child(String.valueOf(index)).child("question").getValue().toString();
+
+                String option_one = dataSnapshot.child(String.valueOf(index)).child("optionList").child("0").getValue().toString();
+                String option_two = dataSnapshot.child(String.valueOf(index)).child("optionList").child("1").getValue().toString();
+                String option_three = dataSnapshot.child(String.valueOf(index)).child("optionList").child("2").getValue().toString();
+                String option_four = dataSnapshot.child(String.valueOf(index)).child("optionList").child("3").getValue().toString();
+
+                option1text.setText(option_one);
+                option2text.setText(option_two);
+                option3text.setText(option_three);
+                option4text.setText(option_four);
+
+                checkCorrectAnswer(question, option_one, option_two, option_three, option_four, answer);
+                index++;
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        finishQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                refToUser.child(user).setValue(answerCorrected);
+                Intent intentToMainActivity = new Intent(QuizActivity.this, MainActivity.class);
+                startActivity(intentToMainActivity);
+            }
+
+        });
 
 
     }
 
-    int checkCorrectAnswer(String question, String optionOne, String optionTwo, String optionThree, String optionFour, final int correctOption) {
+
+    int checkCorrectAnswer(final String question, String optionOne, String optionTwo, String optionThree, String optionFour, final int correctOption) {
         questionTextView.setText(question);
         final int[] selectedOption = {0};
         final boolean[] isSelected = {false};
@@ -111,18 +171,45 @@ public class QuizActivity extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 timeTextView.setText("00" + ":0" + String.valueOf(millisUntilFinished / 1000));
             }
+
             public void onFinish() {
-                if(index<TOTAL_QUESTIONS){
-                    checkCorrectAnswer(allQuestions[index++],"","","","",1);
+                if (index < TOTAL_QUESTIONS) {
+
+                    enabledRef.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            int answer = Integer.parseInt(dataSnapshot.child(String.valueOf(index)).child("answer").getValue().toString());
+                            String question = dataSnapshot.child(String.valueOf(index)).child("question").getValue().toString();
+                            String option_one = dataSnapshot.child(String.valueOf(index)).child("optionList").child("0").getValue().toString();
+                            String option_two = dataSnapshot.child(String.valueOf(index)).child("optionList").child("1").getValue().toString();
+                            String option_three = dataSnapshot.child(String.valueOf(index)).child("optionList").child("2").getValue().toString();
+                            String option_four = dataSnapshot.child(String.valueOf(index)).child("optionList").child("3").getValue().toString();
+
+                            option1text.setText(option_one);
+                            option2text.setText(option_two);
+                            option3text.setText(option_three);
+                            option4text.setText(option_four);
+
+                            checkCorrectAnswer(question, option_one, option_two, option_three, option_four, answer);
+                            index++;
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+
                     unmarkOption(selectedOption[0]);
-                    if(selectedOption[0]==correctOption){
-                        answerCorrected +=1;
+                    if (selectedOption[0] == correctOption) {
+                        answerCorrected += 1;
                     }
                     Toast.makeText(QuizActivity.this, "Time Complete , Selected Option" + selectedOption[0], Toast.LENGTH_SHORT).show();
-                }if(index==TOTAL_QUESTIONS){
+                }
+                if (index == TOTAL_QUESTIONS) {
                     finishQuiz.setVisibility(View.VISIBLE);
                 }
-                ScoreTextView.setText("Score : " + answerCorrected + "/" + (index-1));
+                ScoreTextView.setText("Score : " + answerCorrected + "/" + (index));
             }
         };
         countDownTimer.start();
@@ -153,8 +240,6 @@ public class QuizActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         countDownTimer.cancel();
-
     }
 }

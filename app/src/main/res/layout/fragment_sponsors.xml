@@ -10,14 +10,14 @@
 
     <Space
         android:layout_width="wrap_content"
-        android:layout_height="32dp" />
+        android:layout_height="20dp" />
 
     <TextView
         android:id="@+id/sponsor_name"
         android:layout_width="wrap_content"
+        android:fontFamily="@font/barlow_semi_bold"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:fontFamily="sans-serif-light"
         android:textColor="@android:color/black"
         android:textSize="26sp"
         tools:text="Balasmiq" />
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:fontFamily="sans-serif-light"
+        android:fontFamily="@font/barlow_regular"
         android:textColor="@color/colorBlack"
         android:textSize="20sp"
         tools:text="Title Sponsor" />
@@ -43,7 +43,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="01"
         android:orientation="vertical">
 
         <com.yarolegovich.discretescrollview.DiscreteScrollView

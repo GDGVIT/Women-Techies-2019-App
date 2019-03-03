@@ -31,6 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
+                android:fontFamily="@font/barlow_semi_bold"
                 android:gravity="center_horizontal"
                 android:text="Stay tuned for goodies.."
                 android:textSize="24sp" />
@@ -38,7 +39,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/barlow_medium"
                 android:gravity="center_horizontal"
                 android:text="Check back here later to find a unique key from a Scratch Card and stand a chance towin exclusive goodies." />
         </LinearLayout>
@@ -66,6 +68,7 @@
                 android:layout_marginBottom="16dp"
                 android:layout_marginTop="24dp"
                 android:text="Its Here!"
+                android:fontFamily="@font/barlow_medium"
                 android:textSize="24sp" />
 
             <TextView
@@ -74,6 +77,7 @@
                 android:layout_marginBottom="24dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/barlow_regular"
                 android:gravity="center_horizontal"
                 android:text="Scratch the card below and enter the lucky draw"
                 android:textSize="16sp" />
@@ -112,7 +116,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginRight="16dp"
                 android:layout_marginLeft="14dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/barlow_regular"
                 android:text="Your unique key is ..."
                 android:textSize="24sp" />
 
@@ -120,19 +125,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="160dp"
-                    android:layout_gravity="center"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginStart="24dp" />
 
                 <TextView
                     android:id="@+id/keyTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:fontFamily="sans-serif-light"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="40dp"
+                    android:fontFamily="@font/barlow_regular"
                     android:gravity="center_horizontal"
                     android:textSize="28sp" />
             </FrameLayout>

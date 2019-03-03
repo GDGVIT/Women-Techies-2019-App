@@ -19,13 +19,11 @@ public class QuestionAdapter extends RecyclerView.Adapter<com.example.wtmapp.Que
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewQuestionCount;
         TextView textViewQuestion;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             this.textViewQuestion = (TextView) itemView.findViewById(R.id.text_view_question);
-            this.textViewQuestionCount = (TextView) itemView.findViewById(R.id.text_view_question_count);
         }
     }
 
@@ -50,10 +48,8 @@ public class QuestionAdapter extends RecyclerView.Adapter<com.example.wtmapp.Que
     public void onBindViewHolder(final com.example.wtmapp.Question.QuestionAdapter.MyViewHolder holder, final int listPosition) {
 
         TextView textViewQuestion = holder.textViewQuestion;
-        TextView textViewQuestionCount = holder.textViewQuestionCount;
 
         textViewQuestion.setText(dataSet.get(listPosition).getQuestion());
-        textViewQuestionCount.setText(dataSet.get(listPosition).getCount());
     }
 
     @Override

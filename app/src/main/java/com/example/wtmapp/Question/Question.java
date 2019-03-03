@@ -2,11 +2,11 @@ package com.example.wtmapp.Question;
 
 public class Question {
 
-    String count;
+   // String count;
     String question;
 
-    public Question(String  count ,String question) {
-        this.count = count;
+    public Question(String question) {
+       // this.count = count;
         this.question = question;
     }
 
@@ -14,7 +14,7 @@ public class Question {
         return question;
     }
 
-    public String getCount() {
-        return count;
-    }
+//    public String getCount() {
+//        return count;
+//    }
 }

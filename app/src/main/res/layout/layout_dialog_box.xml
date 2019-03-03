@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="40dp"
+        android:fontFamily="@font/barlow_regular"
         android:hint="Write your question"
         android:layout_marginRight="20dp" />
 
@@ -27,6 +28,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:fontFamily="@font/barlow_regular"
             android:background="@drawable/dialog_box_confirm_button_background"
             android:text="Confirm"
             android:textColor="@color/colorBlack" />
@@ -36,6 +38,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:fontFamily="@font/barlow_regular"
             android:background="@drawable/dialog_box_cancel_button_background"
             android:text="Cancel"
             android:textColor="@color/colorBlack" />

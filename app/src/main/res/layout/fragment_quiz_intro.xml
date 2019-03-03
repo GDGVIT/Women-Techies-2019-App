@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_quiz_placeholder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:visibility="visible">
+
+    <TextView
+        android:id="@+id/instructionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/barlow_semi_bold"
+        android:text="Instructions"
+        android:textColor="@color/colorBlack"
+        android:textSize="25sp" />
+
+    <View
+        android:id="@+id/horizontalLine"
+        android:layout_width="100dp"
+        android:layout_height="3dp"
+        android:layout_below="@id/instructionText"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorGradientBlue" />
+
+    <TextView
+        android:id="@+id/quiz_instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/horizontalLine"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="32dp"
+        android:fontFamily="@font/barlow_regular"
+        android:lineSpacingExtra="0.8sp"
+        android:text="@string/instruction"
+        android:textColor="#676464"
+        android:textSize="20sp" />
+
+
+    <TextView
+        android:id="@+id/quiz_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/quiz_instructions"
+        android:text="Quiz Disabled"
+        android:fontFamily="@font/barlow_semi_bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:textSize="22sp"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btn_start_quiz"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/about_btn_background"
+        android:backgroundTint="@color/colorGradientBlue"
+        android:elevation="4dp"
+        android:fontFamily="@font/barlow_regular"
+        android:text="Start Quiz"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp" />
+
+
+</RelativeLayout>

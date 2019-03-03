@@ -1,15 +1,13 @@
 package com.example.wtmapp.About;
 
-import com.example.wtmapp.Question.Question;
-
-public class Faq {
+public class FAQ {
 
     private String Question;
     private String Answer;
     private boolean isExpanded;
 
 
-    public Faq(String question, String answer) {
+    public FAQ(String question, String answer) {
         Question = question;
         Answer = answer;
     }

@@ -44,6 +44,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="2dp"
                     android:text="Event Name"
+                    android:fontFamily="@font/barlow_regular"
                     android:textColor="@color/colorWhite"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </LinearLayout>
@@ -54,7 +55,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Event Timing"
+                android:layout_marginTop="5dp"
                 android:textStyle="bold"
+                android:fontFamily="@font/barlow_bold"
                 android:textColor="@color/colorWhite"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 

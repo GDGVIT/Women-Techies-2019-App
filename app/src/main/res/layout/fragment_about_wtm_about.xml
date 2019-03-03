@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/barlow_semi_bold"
+            android:paddingTop="15dp"
+            android:text="About Us"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorGradientBlue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_regular"
+            android:paddingRight="15dp"
+            android:text="Women Techmakers, VIT an initiative by Google is back with its premium event, Women Techies, in collaboration with Developer Student Club, VIT. Women Techies is a female-centric hackathon through which we aim to provide, talented and innovative women the platform and resources to push their limits!"
+            android:textColor="#6D6D6D"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_regular"
+            android:paddingRight="15dp"
+            android:layout_marginTop="20dp"
+            android:text="Women Techies is a platform for female participants to test their skills, explore the world of hackathons and create innovative projects to revolutionize the world. So, ladies, it’s your turn now to challenge yourself and bring the best out of you!"
+            android:textColor="#6D6D6D"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_regular"
+            android:paddingRight="15dp"
+            android:layout_marginTop="20dp"
+            android:text="Women Techies provide you with a chance to win prizes worth Rs 32,000 in cash, a chance to get internships in renowned companies, exclusive schwags, stickers and ofcourse Pizzas!"
+            android:textColor="#6D6D6D"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>

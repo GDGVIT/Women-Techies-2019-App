@@ -22,7 +22,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="10dp"
             android:text="dfghjkhgfhjkjhgf"
+            android:fontFamily="@font/barlow_medium"
             android:textColor="@color/colorBlack"
             android:textSize="16dp" />
 
@@ -30,8 +34,9 @@
             android:id="@+id/answer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/quiz_gradient"
-            android:padding="8dp"
+            android:background="@drawable/gradient_box_tilt"
+            android:padding="10dp"
+            android:fontFamily="@font/barlow_regular"
             android:text="fdfghjnkmnbhgftrghjnkmmnbvgf"
             android:textColor="@color/colorWhite"
             android:textSize="14dp" />

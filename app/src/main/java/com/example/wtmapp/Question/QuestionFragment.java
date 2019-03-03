@@ -13,6 +13,8 @@ import com.example.wtmapp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,8 +22,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -42,7 +42,11 @@ public class QuestionFragment extends Fragment {
     Button lableConfirmButton;
     Button lableCancelButton;
     EditText newQuestion;
-    int count = 1;
+
+    FirebaseUser user;
+    private FirebaseAuth mAuth;
+    String mail;
+    String status;
 
     @Nullable
     @Override
@@ -57,24 +61,29 @@ public class QuestionFragment extends Fragment {
         questionRecyclerView.setLayoutManager(questionLayoutManager);
         questionRecyclerView.setAdapter(mQuestionAdapter);
 
+    //    mAuth = FirebaseAuth.getInstance();
+       // user = mAuth.getCurrentUser();
+//        mail = user.getDisplayName();
+
+
         mMessagesDatabaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-                    String question = dataSnapshot.getValue().toString();
-                    String number = dataSnapshot.getKey().toString();
-                    question_list.add(new Question(number,question));
+                for(DataSnapshot data : dataSnapshot.getChildren()) {
+                    String question = data.getValue().toString();
+                    question_list.add(new Question(question));
                     mQuestionAdapter.notifyDataSetChanged();
-
+                }
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
-                String question = dataSnapshot.getValue().toString();
-                String number = dataSnapshot.getKey().toString();
-                question_list.add(new Question(number,question));
-                mQuestionAdapter.notifyDataSetChanged();
+                for(DataSnapshot data : dataSnapshot.getChildren()) {
+                    String question = data.getValue().toString();
+                    question_list.add(new Question(question));
+                    mQuestionAdapter.notifyDataSetChanged();
+                }
 
             }
 
@@ -109,24 +118,40 @@ public class QuestionFragment extends Fragment {
                 lableConfirmButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        String question = newQuestion.getText().toString();
-                        mMessagesDatabaseReference.child(String.valueOf(count)).setValue(question)
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        Toast.makeText(getContext(), "Successful", Toast.LENGTH_SHORT).show();
-                                        count++;
-                                        lableDialog.cancel();
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(getContext(), "Not inserted", Toast.LENGTH_SHORT).show();
-                                        lableDialog.cancel();
-                                    }
-                                });
 
+                        try {
+                            mAuth = FirebaseAuth.getInstance();
+                            user = mAuth.getCurrentUser();
+                            mail = user.getDisplayName();
+                            status =  "1";
+                        }catch (Exception e){
+                            status = "0" ;
+                            Toast.makeText(getContext(), "You have to log in to post questions", Toast.LENGTH_SHORT).show();
+                            lableDialog.cancel();
+                        }
+                        if (status.equals("0")) {
+                            Toast.makeText(getContext(), "You have to log in to post questions", Toast.LENGTH_SHORT).show();
+                            lableDialog.cancel();
+                        } else {
+                            String question = newQuestion.getText().toString();
+                            mMessagesDatabaseReference.push().child(mail).setValue(question)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Toast.makeText(getContext(), "Successful", Toast.LENGTH_SHORT).show();
+                                            lableDialog.cancel();
+
+
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(getContext(), "Not inserted", Toast.LENGTH_SHORT).show();
+                                            lableDialog.cancel();
+                                        }
+                                    });
+                        }
                     }
                 });
 

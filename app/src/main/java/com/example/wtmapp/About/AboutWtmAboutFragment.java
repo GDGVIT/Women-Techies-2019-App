@@ -11,19 +11,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class AboutDscAbout extends Fragment {
+public class AboutWtmAboutFragment extends Fragment {
     private View rootView;
 
-    public AboutDscAbout() {
+    public AboutWtmAboutFragment() {
     }
 
-    public static AboutDscAbout newInstance() {
-        return new AboutDscAbout();
+    public static AboutWtmAboutFragment newInstance() {
+        return new AboutWtmAboutFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.activity_about_dsc_about, container, false);
+        rootView = inflater.inflate(R.layout.fragment_about_wtm_about, container, false);
         return rootView;
     }
 }

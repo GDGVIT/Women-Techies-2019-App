@@ -35,9 +35,7 @@ public class ScratchFragment extends Fragment {
     private DatabaseReference keyRef = database.getReference("keys");
     private DatabaseReference enabledRef = database.getReference("quiz").child("scratchEnabled");
 
-    public ScratchFragment() {
-        // Required empty public constructor
-    }
+    public ScratchFragment() {}
 
     public static ScratchFragment newInstance() {
         return new ScratchFragment();
@@ -94,7 +92,7 @@ public class ScratchFragment extends Fragment {
         if (sharedpreferences.contains(CouponKey)) {
             scratchView.setText(sharedpreferences.getString(CouponKey, ""));
         } else {
-            String key = keyRef.push().getKey();//key to be taken from Firebase
+            String key = keyRef.push().getKey();
             key = key.substring(key.length() - 8, key.length());
             keyRef.child(key).setValue(key);
             keyRef.addValueEventListener(new ValueEventListener() {

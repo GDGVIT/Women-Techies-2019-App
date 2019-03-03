@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_other"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorBackground"
+        android:elevation="5dp"
+        android:fontFamily="@font/barlow_medium"
+        android:textAlignment="center"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:theme="@style/ToolbarColoredBackArrow"
+        app:titleTextColor="@color/colorGradientBlue">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About DSC"
+            android:textStyle="bold"
+            android:textColor="@color/colorGradientBlue"
+            android:textSize="20sp" />
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <LinearLayout
+        android:id="@+id/about_linear_layout"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/about_border">
+
+        <TextView
+            android:id="@+id/btn_dsc_about"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/barlow_semi_bold"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="ABOUT"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/btn_dsc_faq"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/barlow_semi_bold"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="FAQ"
+            android:textColor="@color/colorBlack" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/about_dsc_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp"
+        android:text="About DSC"
+        app:layout_constraintVertical_bias="0.231">
+
+    </FrameLayout>
+
+
+</LinearLayout>

@@ -2,7 +2,6 @@ package com.example.wtmapp.About;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.graphics.Movie;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,6 @@ import android.widget.TextView;
 
 import com.example.wtmapp.R;
 
-import java.io.File;
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
@@ -19,28 +17,27 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class AboutDscFaqAdapter extends RecyclerView.Adapter<AboutDscFaqAdapter.FaqHolder>{
 
-    ArrayList<Faq> faqArrayList;
+    ArrayList<FAQ> faqArrayList;
     AssetManager assetManager;
     Context context;
 
-    public AboutDscFaqAdapter(ArrayList<Faq> faqArrayList) {
+    public AboutDscFaqAdapter(ArrayList<FAQ> faqArrayList) {
         this.faqArrayList = faqArrayList;
     }
 
     @NonNull
     @Override
     public FaqHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.faq_card_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.faq_card_item, parent, false);
         assetManager = parent.getContext().getAssets();
         context = parent.getContext();
         return new FaqHolder(view);    }
 
     @Override
     public void onBindViewHolder(@NonNull FaqHolder holder, final int position) {
-        final Faq faq = faqArrayList.get(position);
+        final FAQ faq = faqArrayList.get(position);
 
         boolean expanded = faq.isExpanded();
-        // Set the visibility based on state
         holder.answer.setVisibility(expanded ? View.VISIBLE : View.GONE);
 
         holder.question.setText(faq.getQuestion());
@@ -52,9 +49,7 @@ public class AboutDscFaqAdapter extends RecyclerView.Adapter<AboutDscFaqAdapter.
             @Override
             public void onClick(View v) {
                 boolean expanded = faq.isExpanded();
-                // Change the state
                 faq.setExpanded(!expanded);
-                // Notify the adapter that item has changed
                 notifyItemChanged(position);
             }
         });
