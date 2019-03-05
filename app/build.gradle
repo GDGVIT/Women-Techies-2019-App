@@ -46,6 +46,7 @@ dependencies {
     implementation 'com.shobhitpuri.custombuttons:google-signin:1.0.0'
 
     implementation 'com.thoughtbot:expandablerecyclerview:1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
 
 }
