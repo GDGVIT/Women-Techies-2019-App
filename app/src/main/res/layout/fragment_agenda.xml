@@ -1,80 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="20dp"
-    tools:context="com.example.wtmapp.Agenda.AgendaFragment">
+    android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+            <ImageView
+                android:id="@+id/image_one"
+                android:layout_width="200dp"
+                android:layout_height="196dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toEndOf="@+id/image_two"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_icon" />
 
-                <ImageView
-                    android:id="@+id/image_one"
-                    android:layout_width="200dp"
-                    android:layout_height="196dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/my_recycler_view"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.497"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.1"
-                    app:srcCompat="@drawable/ic_icon" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/my_recycler_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_below="@id/image_one"
-                    android:layout_marginTop="100dp"
-                    android:scrollbars="horizontal" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/image_two"
-                    android:layout_width="200dp"
-                    android:layout_height="196dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/my_recycler_view"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.497"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.1"
-                    app:srcCompat="@drawable/ic_icon" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/my_recycler_view_other"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_below="@id/image_two"
-                    android:layout_marginTop="100dp"
-                    android:scrollbars="horizontal" />
-            </LinearLayout>
+            <ImageView
+                android:id="@+id/image_two"
+                android:layout_width="200dp"
+                android:layout_height="196dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_icon" />
         </LinearLayout>
-    </RelativeLayout>
-</androidx.core.widget.NestedScrollView>
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/my_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_one"
+                android:paddingStart="8dp"
+                android:scrollbars="none"
+                tools:layout_editor_absoluteY="100dp" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/my_recycler_view_other"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/image_two"
+                android:paddingEnd="16dp"
+                android:scrollbars="none"
+                tools:layout_editor_absoluteY="100dp" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

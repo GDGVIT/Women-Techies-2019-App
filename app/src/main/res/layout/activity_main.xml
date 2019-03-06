@@ -14,12 +14,10 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="410dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        android:paddingTop="50dp"
-        android:paddingLeft="30dp">
+        android:fitsSystemWindows="true">
 
         <include
             layout="@layout/nav_panel_layout"
