@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.wtmapp.R;
 import com.google.android.material.navigation.NavigationView;
@@ -12,10 +13,8 @@ import com.google.android.material.navigation.NavigationView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 public class AboutWTMActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -28,13 +27,15 @@ public class AboutWTMActivity extends AppCompatActivity implements NavigationVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_wtm);
 
-        View v = getLayoutInflater().inflate(R.layout.activity_about_wtm,null);
-        toolbar = (Toolbar) v.findViewById(R.id.toolbar_other);
+        View v = getLayoutInflater().inflate(R.layout.activity_about_wtm, null);
+        toolbar = (Toolbar) v.findViewById(R.id.toolbar_other_wtm);
+        toolbar.setTitleTextAppearance(this, R.style.BarlowTextAppearance);
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
+
 
         showFragment(AboutWtmAboutFragment.newInstance());
 
@@ -89,9 +90,20 @@ public class AboutWTMActivity extends AppCompatActivity implements NavigationVie
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
+
+        int id = item.getItemId();
+
+        if(id==R.id.home){
+            this.finish();
         }
+//
+//        if (item.getItemId() == android.R.id.home) {
+//            Toast.makeText(getApplicationContext(),"hello",Toast.LENGTH_SHORT).show();
+////            selectedScreen = AboutActivityFragment.newInstance();
+////            showFragment(selectedScreen);
+////            finish();
+//            onBackPressed();
+//        }
         return super.onOptionsItemSelected(item);
     }
 

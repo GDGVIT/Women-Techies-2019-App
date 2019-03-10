@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WTMApp</string>
+    <string name="app_name">WomenTechies 2019</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -8,7 +8,8 @@
     <string name="action_settings">Settings</string>
     <string name="instruction">You will have 10 seconds for every question
                 You can attempt this quiz only once
-                Wrong answer will end the quiz</string>
+                Wrong answer will end the quiz
+    </string>
     <string name="sampleQuestion">What is the format of the hack?</string>
     <string name="sampleAnswer">If you dont see a logout popup screen, dfdgfmkfx then probably your computer may have popup dsd blocker bfjsdb dghjkshgjs sdhgodhg jdgjoigj djgok fgjofjgkf dfjafiaf ahfjf fhdfojsof dsjfoisopkskds dj dkxjk vjxkvjkxovkxvkxv xkjvkxvkx vjxvkxkvx vvkxk vnxckjv xvjxov xvjxkvx vjdkovjkdv dsi fjsziofj jzdk vndkvk vkdjvk vdjvodvdkjv vdjvidvidjidm fjdijdmvi</string>
 </resources>

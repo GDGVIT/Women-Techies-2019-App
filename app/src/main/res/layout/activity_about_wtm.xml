@@ -7,10 +7,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context=".MainActivity">
+    tools:context=".About.AboutWTMActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_other"
+        android:id="@+id/toolbar_other_wtm"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorBackground"
@@ -25,42 +25,45 @@
             android:layout_height="wrap_content"
             android:text="About WTM"
             android:textSize="20dp"
-            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingEnd="75dp"
+            android:fontFamily="@font/barlow_regular"
             android:textColor="@color/colorGradientBlue" />
     </androidx.appcompat.widget.Toolbar>
 
 
     <LinearLayout
-        android:id="@+id/about_wtm_linear_layout"
-        android:background="@drawable/about_border"
-        android:layout_width="140dp"
+        android:id="@+id/about_linear_layout"
+        android:layout_width="240dp"
+        android:layout_height="38dp"
         android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"
+        android:background="@drawable/about_border">
 
         <TextView
-            android:padding="8dp"
             android:id="@+id/btn_wtm_about"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/barlow_medium"
             android:gravity="center"
+            android:padding="8dp"
             android:text="ABOUT"
-            android:fontFamily="@font/barlow_semi_bold"
+            android:textSize="17sp"
             android:textColor="@color/colorBlack" />
 
         <TextView
-            android:padding="8dp"
-            android:textColor="@color/colorBlack"
             android:id="@+id/btn_wtm_faq"
-            android:gravity="center"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:fontFamily="@font/barlow_semi_bold"
-            android:text="FAQ"/>
+            android:fontFamily="@font/barlow_medium"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="FAQ"
+            android:textSize="17sp"
+            android:textColor="@color/colorBlack" />
     </LinearLayout>
-
     <FrameLayout
         android:id="@+id/about_wtm_content"
         android:layout_width="match_parent"

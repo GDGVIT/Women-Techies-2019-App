@@ -6,8 +6,10 @@
         <!--android:width="2dp">-->
     <!--</stroke>-->
     <gradient
-        android:startColor="@color/colorGradientBlue"
-        android:endColor="@color/colorGradientGreen">
+        android:startColor="#80b1f7"
+        android:centerColor="@color/colorGradientGreen"
+        android:endColor="@color/colorGradientGreen"
+        android:angle="45">
     </gradient>
     <corners
         android:bottomLeftRadius="10dp"

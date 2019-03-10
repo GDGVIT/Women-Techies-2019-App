@@ -207,6 +207,10 @@ public class QuizActivity extends AppCompatActivity {
                     Toast.makeText(QuizActivity.this, "Time Complete , Selected Option" + selectedOption[0], Toast.LENGTH_SHORT).show();
                 }
                 if (index == TOTAL_QUESTIONS) {
+                    option1.setEnabled(false);
+                    option2.setEnabled(false);
+                    option3.setEnabled(false);
+                    option4.setEnabled(false);
                     finishQuiz.setVisibility(View.VISIBLE);
                 }
                 ScoreTextView.setText("Score : " + answerCorrected + "/" + (index));

@@ -36,4 +36,14 @@
     <style name="ToolbarColoredBackArrow" parent="AppTheme">
         <item name="android:textColorSecondary">@color/colorGradientBlue</item>
     </style>
+
+
+    Since android.support.v7.appcompat 24.2 Toolbar has method setTitleTextAppearance and you can set its font without external textview.
+
+    create new style in styles.xml
+
+    <style name="BarlowTextAppearance">
+        <item name="android:fontFamily">@font/barlow_regular</item>
+        <item name="android:textSize">22sp</item>
+    </style>
 </resources>

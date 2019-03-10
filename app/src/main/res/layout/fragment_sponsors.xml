@@ -20,6 +20,7 @@
         android:layout_gravity="center_horizontal"
         android:textColor="@android:color/black"
         android:textSize="26sp"
+        android:layout_marginTop="5dp"
         tools:text="Balasmiq" />
 
     <Space
@@ -70,6 +71,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
+
+            android:tint="@color/colorGradientGreen"
             app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
 
         <Space
@@ -83,6 +86,7 @@
             android:src="@drawable/ic_language_black_24dp"
             android:tint="@android:color/white"
             app:useCompatPadding="true"
+            app:borderWidth="0dp"
             android:backgroundTint="@color/colorGradientGreen"/>
 
         <Space
@@ -95,6 +99,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
+            android:tint="@color/colorGradientGreen"
             app:srcCompat="@drawable/ic_arrow_forward_black_24dp" />
 
     </LinearLayout>

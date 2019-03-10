@@ -1,6 +1,9 @@
 package com.example.wtmapp.Quiz;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.wtmapp.R;
-import com.example.wtmapp.ScratchFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -38,11 +40,16 @@ public class QuizIntroFragment extends Fragment {
     String name = null;
     String number_of_attempts = "3";
     View rootView;
+    Dialog lableDialog;
+    Button lableConfirmButton;
+    Button lableCancelButton;
 
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference refToUser = database.getReference("users");
 
-    public QuizIntroFragment() {}
+    public QuizIntroFragment() {
+    }
+
     public static QuizIntroFragment newInstance() {
         return new QuizIntroFragment();
     }
@@ -82,13 +89,12 @@ public class QuizIntroFragment extends Fragment {
         });
 
 
-
         startQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 if (user != null) {
-                    name =  user.getDisplayName();
+                    name = user.getDisplayName();
 
 
                     refToUser.addValueEventListener(new ValueEventListener() {
@@ -96,7 +102,7 @@ public class QuizIntroFragment extends Fragment {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             try {
                                 number_of_attempts = dataSnapshot.child(name).getValue().toString();
-                            }catch (Exception e){
+                            } catch (Exception e) {
                                 number_of_attempts = "0";
                             }
                         }
@@ -107,9 +113,31 @@ public class QuizIntroFragment extends Fragment {
                         }
                     });
 
-                    if (number_of_attempts.equals( "0")) {
+                    if (number_of_attempts.equals("0")) {
                         if (permission.equals("1")) {
-                            startQuiz();
+
+                            lableDialog = new Dialog(getActivity());
+                            lableDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                            lableDialog.setContentView(R.layout.quiz_dialog_box);
+                            lableDialog.show();
+
+                            lableConfirmButton = lableDialog.findViewById(R.id.lable_quiz_confirm_button);
+                            lableCancelButton = lableDialog.findViewById(R.id.lable_quiz_cancel_button);
+
+                            lableConfirmButton.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    startQuiz();
+                                }
+                            });
+
+                            lableCancelButton.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    lableDialog.cancel();
+                                }
+                            });
+
                         } else {
                             quizStatus.setVisibility(View.VISIBLE);
                         }

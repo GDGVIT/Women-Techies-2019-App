@@ -1,6 +1,8 @@
 package com.example.wtmapp.Question;
 
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -108,6 +110,7 @@ public class QuestionFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 lableDialog = new Dialog(getActivity());
+                lableDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 lableDialog.setContentView(R.layout.layout_dialog_box);
                 lableDialog.show();
 

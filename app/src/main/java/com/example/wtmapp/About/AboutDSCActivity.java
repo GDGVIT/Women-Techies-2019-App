@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.wtmapp.R;
 import com.google.android.material.navigation.NavigationView;
@@ -27,12 +28,16 @@ public class AboutDSCActivity extends AppCompatActivity implements NavigationVie
         setContentView(R.layout.activity_about_dsc);
 
         View v = getLayoutInflater().inflate(R.layout.activity_about_dsc, null);
-        toolbar = (Toolbar) v.findViewById(R.id.toolbar_other);
+        toolbar = v.findViewById(R.id.toolbar_other_dsc);
+        toolbar.setTitleTextAppearance(this, R.style.BarlowTextAppearance);
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+
+
 
         showFragment(AboutDscAboutFragment.newInstance());
 
@@ -87,9 +92,21 @@ public class AboutDSCActivity extends AppCompatActivity implements NavigationVie
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
+
+        int id = item.getItemId();
+
+        if(id==R.id.home){
+            this.finish();
         }
+
+//        if (item.getItemId() == android.R.id.home) {
+//            onBackPressed();
+//           Toast.makeText(getApplicationContext(),"hello",Toast.LENGTH_SHORT).show();
+////            selectedScreen = AboutActivityFragment.newInstance();
+////            showFragment(selectedScreen);
+////            finish();
+//
+//        }
         return super.onOptionsItemSelected(item);
     }
 

@@ -5,13 +5,13 @@ public class Agenda  {
     String name;
     String description;
     int id_;
-    int image;
+   // int image;
 
-    public Agenda(String name, String version, int id_, int image) {
+    public Agenda(String name, String version, int id_) {
         this.name = name;
         this.description = version;
         this.id_ = id_;
-        this.image=image;
+       // this.image=image;
     }
 
     public String getName() {
@@ -22,11 +22,11 @@ public class Agenda  {
         return description;
     }
 
-    public int getImage() {
-        return image;
-    }
-
-    public int getId() {
-        return id_;
-    }
+//    public int getImage() {
+//        return image;
+//    }
+//
+//    public int getId() {
+//        return id_;
+//    }
 }

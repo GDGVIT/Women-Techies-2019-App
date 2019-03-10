@@ -48,7 +48,7 @@ public class SignInFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
         rootView = inflater.inflate(R.layout.fragment_sign_in, container, false);
-        btnGoogleSignIn =  rootView.findViewById(R.id.btn_google_login);
+        btnGoogleSignIn = rootView.findViewById(R.id.btn_google_login);
         btnGoogleSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +62,7 @@ public class SignInFragment extends Fragment {
             @Override
             public void onAuthStateChanged(final @NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null) {
-                    }
+                }
             }
         };
 
@@ -99,12 +99,17 @@ public class SignInFragment extends Fragment {
             if (result.isSuccess()) {
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
-                Toast.makeText(getActivity(), "Logged in successfully!!" , Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Logged in successfully!!", Toast.LENGTH_SHORT).show();
+
+                Intent intentToMainActivity = new Intent(getActivity(),MainActivity.class);
+                startActivity(intentToMainActivity);
+
             } else {
                 Toast.makeText(getActivity(), "Authentication went wrong ", Toast.LENGTH_SHORT).show();
             }
         }
     }
+
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
 
@@ -131,7 +136,6 @@ public class SignInFragment extends Fragment {
         mAuth.addAuthStateListener(mAuthListener);
 
     }
-
 
 }
 

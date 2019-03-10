@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Agenda");
+        toolbar.setTitleMarginStart(260);
+        toolbar.setTitleTextAppearance(this, R.style.BarlowTextAppearance);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -65,6 +68,7 @@ public class MainActivity extends AppCompatActivity
                                 .replace(R.id.frame_layout, cameraImportFragment)
                                 .addToBackStack(null)
                                 .commit();
+                        toolbar.setTitle("Agenda");
                         break;
 
                     case "About":
@@ -73,6 +77,7 @@ public class MainActivity extends AppCompatActivity
                                 .replace(R.id.frame_layout, galleryFragment)
                                 .addToBackStack(null)
                                 .commit();
+                        toolbar.setTitle("About");
                         break;
 
                     case "Sponsors":
@@ -81,6 +86,7 @@ public class MainActivity extends AppCompatActivity
                                 .replace(R.id.frame_layout, slideShowFragment)
                                 .addToBackStack(null)
                                 .commit();
+                        toolbar.setTitle("Sponsors");
                         break;
 
                     case "Sign In":
@@ -89,6 +95,7 @@ public class MainActivity extends AppCompatActivity
                                 .replace(R.id.frame_layout, toolsFragment)
                                 .addToBackStack(null)
                                 .commit();
+                        toolbar.setTitle("Sign In");
                         break;
 
                     case "Scratch Card":
@@ -97,6 +104,7 @@ public class MainActivity extends AppCompatActivity
                                 .replace(R.id.frame_layout, shareFragment)
                                 .addToBackStack(null)
                                 .commit();
+                        toolbar.setTitle("Scratch Card");
                         break;
 
                     case "Questions":
@@ -105,6 +113,7 @@ public class MainActivity extends AppCompatActivity
                                 .replace(R.id.frame_layout, sendFragment)
                                 .addToBackStack(null)
                                 .commit();
+                        toolbar.setTitle("Questions");
                         break;
 
                     case "Quiz":
@@ -113,6 +122,7 @@ public class MainActivity extends AppCompatActivity
                                 .replace(R.id.frame_layout, quizFragment)
                                 .addToBackStack(null)
                                 .commit();
+                        toolbar.setTitle("Quiz");
                         break;
 
 
@@ -129,6 +139,7 @@ public class MainActivity extends AppCompatActivity
         FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
         tx.replace(R.id.frame_layout, new AgendaFragment());
         tx.commit();
+
     }
 
     @Override

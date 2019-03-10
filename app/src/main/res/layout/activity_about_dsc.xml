@@ -6,17 +6,16 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".About.AboutDSCActivity">
 
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_other"
+        android:id="@+id/toolbar_other_dsc"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorBackground"
         android:elevation="5dp"
         android:fontFamily="@font/barlow_medium"
-        android:textAlignment="center"
         app:popupTheme="@style/AppTheme.PopupOverlay"
         app:navigationIcon="?attr/homeAsUpIndicator"
         app:theme="@style/ToolbarColoredBackArrow"
@@ -26,7 +25,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="About DSC"
-            android:textStyle="bold"
+            android:fontFamily="@font/barlow_medium"
+            android:gravity="center"
+            android:paddingEnd="75dp"
             android:textColor="@color/colorGradientBlue"
             android:textSize="20sp" />
     </androidx.appcompat.widget.Toolbar>
@@ -34,8 +35,8 @@
 
     <LinearLayout
         android:id="@+id/about_linear_layout"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
+        android:layout_width="240dp"
+        android:layout_height="38dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:background="@drawable/about_border">
@@ -45,10 +46,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="@font/barlow_semi_bold"
+            android:fontFamily="@font/barlow_medium"
             android:gravity="center"
             android:padding="8dp"
             android:text="ABOUT"
+            android:textSize="17sp"
             android:textColor="@color/colorBlack" />
 
         <TextView
@@ -56,10 +58,11 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:fontFamily="@font/barlow_semi_bold"
+            android:fontFamily="@font/barlow_medium"
             android:gravity="center"
             android:padding="8dp"
             android:text="FAQ"
+            android:textSize="17sp"
             android:textColor="@color/colorBlack" />
     </LinearLayout>
 
