@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="300dp"
-    android:layout_height="150dp"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
     android:background="@drawable/about_btn_background"
-    android:layout_gravity="center">
+    android:orientation="vertical">
 
 
     <EditText
         android:id="@+id/edit_text_new_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/fui_transparent"
         android:fontFamily="@font/barlow_regular"
         android:hint="Write your question"
-        android:layout_marginRight="20dp" />
+        android:padding="10dp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -27,9 +30,8 @@
             android:id="@+id/lable_confirm_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/barlow_regular"
             android:background="@drawable/dialog_box_confirm_button_background"
+            android:fontFamily="@font/barlow_regular"
             android:text="Confirm"
             android:textColor="@color/colorBlack" />
 
@@ -37,9 +39,8 @@
             android:id="@+id/lable_cancel_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/barlow_regular"
             android:background="@drawable/dialog_box_cancel_button_background"
+            android:fontFamily="@font/barlow_regular"
             android:text="Cancel"
             android:textColor="@color/colorBlack" />
     </LinearLayout>

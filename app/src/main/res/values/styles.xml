@@ -45,5 +45,7 @@
     <style name="BarlowTextAppearance">
         <item name="android:fontFamily">@font/barlow_regular</item>
         <item name="android:textSize">22sp</item>
+        <item name="android:foregroundGravity">center
+        </item>
     </style>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.womentechmakers.wtmapp.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -18,6 +18,18 @@
             android:background="@color/colorBackground"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:titleTextColor="@color/colorGradientBlue">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/barlow_medium"
+                android:textAlignment="center"
+                android:textColor="@color/colorGradientBlue"
+                android:textSize="22sp"
+                android:text="Title"
+                android:paddingRight="60dp"
+                android:id="@+id/toolbar_title" />
+
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>

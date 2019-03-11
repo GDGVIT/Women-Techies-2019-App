@@ -4,12 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
-        android:layout_width="226dp"
-        android:layout_height="186dp"
+        android:layout_width="206dp"
+        android:layout_height="171dp"
         android:layout_margin="8dp"
         android:elevation="5dp"
         app:cardCornerRadius="15dp">
@@ -34,11 +35,11 @@
                 android:layout_height="0dp"
                 android:fontFamily="@font/barlow_regular"
                 android:gravity="center"
-                android:text="Event Name"
-                android:textSize="22sp"
                 android:padding="10dp"
+                android:text="Event Name"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/colorWhite"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewVersion"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

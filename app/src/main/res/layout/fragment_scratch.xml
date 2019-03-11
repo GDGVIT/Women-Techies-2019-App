@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="@drawable/gradient_box_tilt">
+   >
 
     <androidx.cardview.widget.CardView
         android:id="@+id/placeHolderView"
@@ -42,7 +42,7 @@
                 android:layout_margin="8dp"
                 android:fontFamily="@font/barlow_medium"
                 android:gravity="center_horizontal"
-                android:text="Check back here later to find a unique key from a Scratch Card and stand a chance towin exclusive goodies." />
+                android:text="Check back here later to find a unique key from a Scratch Card and stand a chance to win exclusive goodies." />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

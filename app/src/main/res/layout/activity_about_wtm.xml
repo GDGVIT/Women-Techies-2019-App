@@ -1,41 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context=".About.AboutWTMActivity">
+    android:orientation="vertical"
+    tools:context="com.womentechmakers.wtmapp.About.AboutWTMActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_other_wtm"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorBackground"
-        android:fontFamily="@font/barlow_medium"
-        app:titleTextColor="@color/colorGradientBlue"
         android:elevation="5dp"
-        app:navigationIcon="?attr/homeAsUpIndicator"
+        android:fontFamily="@font/barlow_medium"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
         app:theme="@style/ToolbarColoredBackArrow"
-        app:popupTheme="@style/AppTheme.PopupOverlay">
-        <TextView
+        app:titleTextColor="@color/colorGradientBlue">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="About WTM"
-            android:textSize="20dp"
-            android:gravity="center"
-            android:paddingEnd="75dp"
-            android:fontFamily="@font/barlow_regular"
-            android:textColor="@color/colorGradientBlue" />
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="393dp"
+                android:layout_height="0dp"
+                android:fontFamily="@font/barlow_medium"
+                android:gravity="center"
+                android:paddingRight="20dp"
+                android:text="About WTM"
+                android:textColor="@color/colorGradientBlue"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/back_button_wtm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:tint="@color/colorGradientBlue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.appcompat.widget.Toolbar>
 
 
     <LinearLayout
         android:id="@+id/about_linear_layout"
         android:layout_width="240dp"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:background="@drawable/about_border">
@@ -46,9 +68,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/barlow_medium"
-            android:gravity="center"
-            android:padding="8dp"
+            android:gravity="center_horizontal"
             android:text="ABOUT"
+            android:padding="8dp"
             android:textSize="17sp"
             android:textColor="@color/colorBlack" />
 
@@ -58,12 +80,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:fontFamily="@font/barlow_medium"
-            android:gravity="center"
+            android:gravity="center_horizontal"
             android:padding="8dp"
             android:text="FAQ"
             android:textSize="17sp"
             android:textColor="@color/colorBlack" />
     </LinearLayout>
+
     <FrameLayout
         android:id="@+id/about_wtm_content"
         android:layout_width="match_parent"
@@ -74,7 +97,6 @@
         app:layout_constraintVertical_bias="0.231">
 
     </FrameLayout>
-
 
 
 </LinearLayout>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     android:orientation="vertical"
-    tools:context=".About.AboutDSCActivity">
+    tools:context="com.womentechmakers.wtmapp.About.AboutDSCActivity">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -17,26 +17,51 @@
         android:elevation="5dp"
         android:fontFamily="@font/barlow_medium"
         app:popupTheme="@style/AppTheme.PopupOverlay"
-        app:navigationIcon="?attr/homeAsUpIndicator"
         app:theme="@style/ToolbarColoredBackArrow"
         app:titleTextColor="@color/colorGradientBlue">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="About DSC"
-            android:fontFamily="@font/barlow_medium"
-            android:gravity="center"
-            android:paddingEnd="75dp"
-            android:textColor="@color/colorGradientBlue"
-            android:textSize="20sp" />
-    </androidx.appcompat.widget.Toolbar>
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
+
+            <ImageView
+                android:id="@+id/back_button_dsc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_gravity="left"
+                android:tint="@color/colorGradientBlue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/barlow_medium"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="About DSC"
+                android:textColor="@color/colorGradientBlue"
+                android:textSize="20sp"
+                android:paddingRight="80dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:id="@+id/about_linear_layout"
         android:layout_width="240dp"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:background="@drawable/about_border">
@@ -47,9 +72,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/barlow_medium"
-            android:gravity="center"
-            android:padding="8dp"
+            android:gravity="center_horizontal"
             android:text="ABOUT"
+            android:padding="8dp"
             android:textSize="17sp"
             android:textColor="@color/colorBlack" />
 
@@ -59,7 +84,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:fontFamily="@font/barlow_medium"
-            android:gravity="center"
+            android:gravity="center_horizontal"
             android:padding="8dp"
             android:text="FAQ"
             android:textSize="17sp"
